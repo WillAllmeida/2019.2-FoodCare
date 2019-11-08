@@ -16,6 +16,7 @@ router.register(
 )
 
 
+
 urlpatterns = [
     path('',include(router.urls)),
     path('admin/', admin.site.urls),
@@ -25,5 +26,5 @@ urlpatterns = [
     path('auth/refresh-token/', refresh_jwt_token),
     path('',include('emailfood.urls')),
     path('', include(router.urls)),
-    
+
 ]
