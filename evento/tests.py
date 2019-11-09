@@ -4,6 +4,7 @@ from users.models import Usuario
 from django.contrib.auth.models import User
 from datetime import datetime, date
 import unittest
+from evento.funcoes import distancia
 
 class TesteEvento(TestCase):
     def testa_evento(self):
@@ -27,6 +28,16 @@ class TesteEvento(TestCase):
         )
 
         self.assertEqual(str(evento), "dia da pizza {}".format(usuario.id))
+
+
+    def teste_calcula_distancia(self):
+        print("\nCalcula distancia")
+        valor =  distancia(5,2,2,5)
+        esperado = 3.0
+        self.assertEqual(esperado,valor)
+
+
+
 '''
 class EventoTest(unittest.TestCase):
     def setUp(self):
